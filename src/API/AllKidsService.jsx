@@ -9,7 +9,7 @@ export default class AllKidsService {
                 'Authorization': 'Bearer ' + tokens.access_token
             }
         };
-        return await CallApi.callApi('http://localhost:8080/kindergarten/admin/kids', requestOptions, tokens, setTokens);
+        return await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/admin/kids', requestOptions, tokens, setTokens);
     }
 
     static async getByGroupName(tokens, setTokens) {
@@ -20,7 +20,7 @@ export default class AllKidsService {
                 'Authorization': 'Bearer ' + tokens.access_token
             }
         };
-        return await CallApi.callApi('http://localhost:8080/kindergarten/admin/kids/group_name', requestOptions, tokens, setTokens);
+        return await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/admin/kids/group_name', requestOptions, tokens, setTokens);
     }
 
     static async getByTeacherName(tokens, setTokens) {
@@ -31,7 +31,7 @@ export default class AllKidsService {
                 'Authorization': 'Bearer ' + tokens.access_token
             }
         };
-        return await CallApi.callApi('http://localhost:8080/kindergarten/admin/kids/teacher_email', requestOptions, tokens, setTokens);
+        return await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/admin/kids/teacher_email', requestOptions, tokens, setTokens);
     }
 
     static async getByName(tokens, setTokens) {
@@ -42,7 +42,7 @@ export default class AllKidsService {
                 'Authorization': 'Bearer ' + tokens.access_token
             }
         };
-        return await CallApi.callApi('http://localhost:8080/kindergarten/admin/kids/name', requestOptions, tokens, setTokens);
+        return await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/admin/kids/name', requestOptions, tokens, setTokens);
     }
 
     static async getByBirth(tokens, setTokens) {
@@ -53,6 +53,6 @@ export default class AllKidsService {
                 'Authorization': 'Bearer ' + tokens.access_token
             }
         };
-        return await CallApi.callApi('http://localhost:8080/kindergarten/admin/kids/birth', requestOptions, tokens, setTokens);
+        return await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/admin/kids/birth', requestOptions, tokens, setTokens);
     }
 }

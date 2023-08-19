@@ -10,7 +10,7 @@ export default class KidsService {
                 'Authorization': 'Bearer ' + tokens.access_token
             }
         };
-        return await CallApi.callApi('http://localhost:8080/kindergarten/child', requestOptions, tokens, setTokens);
+        return await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/child', requestOptions, tokens, setTokens);
     }
 
     static async getKidsThatWaitBirth(tokens, setTokens) {
@@ -21,7 +21,7 @@ export default class KidsService {
                 'Authorization': 'Bearer ' + tokens.access_token
             }
         };
-        return await CallApi.callApi('http://localhost:8080/kindergarten/child/birth', requestOptions, tokens, setTokens);
+        return await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/child/birth', requestOptions, tokens, setTokens);
     }
 
     static async getKidsWithRelatives(tokens, setTokens) {
@@ -32,7 +32,7 @@ export default class KidsService {
                 'Authorization': 'Bearer ' + tokens.access_token
             }
         };
-        return await CallApi.callApi('http://localhost:8080/kindergarten/child/full', requestOptions, tokens, setTokens);
+        return await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/child/full', requestOptions, tokens, setTokens);
     }
 
     static async getBrothersAndSisters(id, tokens, setTokens) {
@@ -43,7 +43,7 @@ export default class KidsService {
                 'Authorization': 'Bearer ' + tokens.access_token
             }
         };
-        return await CallApi.callApi(`http://localhost:8080/kindergarten/child/${id}`, requestOptions, tokens, setTokens);
+        return await CallApi.callApi(`https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/child/${id}`, requestOptions, tokens, setTokens);
     }
 
     static async add(name, birthYear, tokens, setTokens) {
@@ -55,7 +55,7 @@ export default class KidsService {
             },
             body: JSON.stringify({name, birthYear})
         };
-        const data = await CallApi.callApi('http://localhost:8080/kindergarten/child', requestOptions, tokens, setTokens);
+        const data = await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/child', requestOptions, tokens, setTokens);
         if (data.debugMessage) {
             alert(data.debugMessage);
             return {ok: false}
@@ -72,7 +72,7 @@ export default class KidsService {
             },
             body: JSON.stringify({id, name, birthYear})
         };
-        const data = await CallApi.callApi(`http://localhost:8080/kindergarten/child`, requestOptions, tokens, setTokens);
+        const data = await CallApi.callApi(`https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/child`, requestOptions, tokens, setTokens);
         if (data) {
             alert(data.debugMessage);
             return {ok: false}
@@ -88,7 +88,7 @@ export default class KidsService {
                 'Authorization': 'Bearer ' + tokens.access_token
             }
         };
-        const data = await CallApi.callApi(`http://localhost:8080/kindergarten/child/${id}`, requestOptions, tokens, setTokens);
+        const data = await CallApi.callApi(`https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/child/${id}`, requestOptions, tokens, setTokens);
         if (data) {
             alert(data.debugMessage);
             return {ok: false}

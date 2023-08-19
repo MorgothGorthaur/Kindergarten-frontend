@@ -8,7 +8,7 @@ export default class AdminService {
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({email, password, phone})
             };
-            const response = await fetch('http://localhost:8080/kindergarten/admin', requestOptions);
+            const response = await fetch('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/admin', requestOptions);
             const data = await response.json();
             if (data.debugMessage) alert(data.debugMessage);
         } catch (e) {
@@ -19,7 +19,7 @@ export default class AdminService {
 
     static async getAdmin(access_token) {
         try {
-            const response = await fetch('http://localhost:8080/kindergarten/admin', {
+            const response = await fetch('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/admin', {
                 method: 'GET',
                 mode: 'cors',
                 headers: {
@@ -43,7 +43,7 @@ export default class AdminService {
                     'Authorization': 'Bearer ' + tokens.access_token
                 }
             };
-            const data = await CallApi.callApi('http://localhost:8080/kindergarten/admin', requestOptions, tokens, setTokens);
+            const data = await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/admin', requestOptions, tokens, setTokens);
             if (data) alert(data.debugMessage)
             else window.location.reload(false);
         } catch (e) {
@@ -61,7 +61,7 @@ export default class AdminService {
                 },
                 body: JSON.stringify({email, password, phone})
             };
-            const data = await CallApi.callApi('http://localhost:8080/kindergarten/admin', requestOptions, tokens, setTokens);
+            const data = await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/admin', requestOptions, tokens, setTokens);
             if (data) alert(data.debugMessage);
             else window.location.reload(false);
         } catch (e) {

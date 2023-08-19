@@ -10,7 +10,7 @@ export default class AllRelativesService {
                 'Authorization': 'Bearer ' + tokens.access_token
             }
         };
-        return await CallApi.callApi('http://localhost:8080/kindergarten/admin/relatives', requestOptions, tokens, setTokens);
+        return await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/admin/relatives', requestOptions, tokens, setTokens);
     }
 
     static async getAllSortedByName(tokens, setTokens) {
@@ -21,7 +21,7 @@ export default class AllRelativesService {
                 'Authorization': 'Bearer ' + tokens.access_token
             }
         };
-        return await CallApi.callApi('http://localhost:8080/kindergarten/admin/relatives/by_name', requestOptions, tokens, setTokens);
+        return await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/admin/relatives/by_name', requestOptions, tokens, setTokens);
     }
 
     static async getAllSortedByKidCount(tokens, setTokens) {
@@ -32,7 +32,7 @@ export default class AllRelativesService {
                 'Authorization': 'Bearer ' + tokens.access_token
             }
         };
-        return await CallApi.callApi('http://localhost:8080/kindergarten/admin/relatives/by_kids', requestOptions, tokens, setTokens);
+        return await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/admin/relatives/by_kids', requestOptions, tokens, setTokens);
     }
 
 
@@ -44,7 +44,7 @@ export default class AllRelativesService {
                 'Authorization': 'Bearer ' + tokens.access_token
             }
         };
-        return await CallApi.callApi('http://localhost:8080/kindergarten/admin/relatives/by_address', requestOptions, tokens, setTokens);
+        return await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/admin/relatives/by_address', requestOptions, tokens, setTokens);
     }
     
 }

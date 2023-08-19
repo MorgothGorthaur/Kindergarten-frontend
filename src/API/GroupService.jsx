@@ -11,7 +11,7 @@ export default class GroupService {
                 'Authorization': 'Bearer ' + tokens.access_token
             }
         };
-        return await CallApi.callApi('http://localhost:8080/kindergarten/group', requestOptions, tokens, setTokens);
+        return await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/group', requestOptions, tokens, setTokens);
     }
 
     static async add(name, maxSize, tokens, setTokens) {
@@ -23,7 +23,7 @@ export default class GroupService {
             },
             body: JSON.stringify({name, maxSize})
         };
-        const data = await CallApi.callApi('http://localhost:8080/kindergarten/group', requestOptions, tokens, setTokens);
+        const data = await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/group', requestOptions, tokens, setTokens);
         if (data) {
             alert(data.debugMessage);
             return {ok: false}
@@ -40,7 +40,7 @@ export default class GroupService {
             },
             body: JSON.stringify({name, maxSize})
         };
-        const data = await CallApi.callApi('http://localhost:8080/kindergarten/group', requestOptions, tokens, setTokens);
+        const data = await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/group', requestOptions, tokens, setTokens);
         if (data) {
             alert(data.debugMessage);
             return {ok: false}
@@ -56,7 +56,7 @@ export default class GroupService {
                 'Authorization': 'Bearer ' + tokens.access_token
             }
         };
-        const data = await CallApi.callApi('http://localhost:8080/kindergarten/group', requestOptions, tokens, setTokens);
+        const data = await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/group', requestOptions, tokens, setTokens);
         if (data) {
             alert(data.debugMessage);
             return {ok: false}

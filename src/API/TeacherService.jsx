@@ -3,7 +3,7 @@ import CallApi from "./CallApi";
 export default class TeacherService {
     static async getAll() {
         try {
-            const response = await fetch('http://localhost:8080/kindergarten/teacher/all');
+            const response = await fetch('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/teacher/all');
             return await response.json();
         } catch (e) {
             console.log(e);
@@ -17,7 +17,7 @@ export default class TeacherService {
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({name, phone, skype, email, password})
             };
-            const response = await fetch('http://localhost:8080/kindergarten/teacher', requestOptions);
+            const response = await fetch('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/teacher', requestOptions);
             const data = await response.json();
             if (data.debugMessage) alert(data.debugMessage);
         } catch (e) {
@@ -28,7 +28,7 @@ export default class TeacherService {
 
     static async getTeacher(access_token) {
         try {
-            const response = await fetch('http://localhost:8080/kindergarten/teacher', {
+            const response = await fetch('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/teacher', {
                 method: 'GET',
                 mode: 'cors',
                 headers: {
@@ -52,7 +52,7 @@ export default class TeacherService {
                     'Authorization': 'Bearer ' + tokens.access_token
                 }
             };
-            const data = await CallApi.callApi('http://localhost:8080/kindergarten/teacher', requestOptions, tokens, setTokens);
+            const data = await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/teacher', requestOptions, tokens, setTokens);
             if (data) alert(data.debugMessage)
             else window.location.reload(false);
         } catch (e) {
@@ -70,7 +70,7 @@ export default class TeacherService {
                 },
                 body: JSON.stringify({name, phone, skype, email, password})
             };
-            const data = await CallApi.callApi('http://localhost:8080/kindergarten/teacher', requestOptions, tokens, setTokens);
+            const data = await CallApi.callApi('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/teacher', requestOptions, tokens, setTokens);
             if (data) alert(data.debugMessage);
             else window.location.reload(false);
         } catch (e) {

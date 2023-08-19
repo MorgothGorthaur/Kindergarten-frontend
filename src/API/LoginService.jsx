@@ -1,7 +1,7 @@
 export default class LoginService {
     static async login(email, password) {
         try {
-            const response = await fetch('http://localhost:8080/login', {
+            const response = await fetch('https://kindergarten-6cfb21ffbf81.herokuapp.com/login', {
                 method: 'POST',
                 mode: 'cors',
                 headers: {
@@ -21,7 +21,7 @@ export default class LoginService {
 
     static async refresh(tokens) {
         try {
-            const response = await fetch('http://localhost:8080/kindergarten/refresh', {
+            const response = await fetch('https://kindergarten-6cfb21ffbf81.herokuapp.com/kindergarten/refresh', {
                 method: 'GET',
                 mode: 'cors',
                 headers: {
